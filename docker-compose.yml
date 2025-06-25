@@ -1,0 +1,37 @@
+
+services:
+   postgres:
+     image: postgres:15.1
+     volumes:
+       - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+       - postgres_microservice_back:/var/lib/postgresql/data
+     environment:
+       POSTGRES_USER: google_calendar
+       POSTGRES_PASSWORD: google_calendar
+       POSTGRES_DB: google_calendar
+     ports:
+       - 5632:5432
+     restart: unless-stopped
+ 
+   back:
+     build: google-calendar-back/.
+     environment:
+       - ENV
+     command: npm run start:${ENV:-prod}
+     ports:
+       - 5100:5100
+     depends_on:
+       - postgres
+  #  front:
+  #    build: 
+  #      context: google-calendar/.
+  #    labels:
+  #      SERVICE_CHECK_INTERVAL: 10s
+  #    ports:
+  #      - 3030:3030
+  #    depends_on:
+  #      - back
+
+ 
+volumes:
+  postgres_microservice_back:

@@ -1,0 +1,17 @@
+<div class="main">
+    <div class="body">
+        <div class="header">
+            <app-event-container-header  [day]="today"/>
+        </div>
+        <div class="full-day">
+            <app-full-day-event-container [today]="today" [days]="[today]"  [events]="events | getFullDayEvents" />
+         </div>
+        <div class="contain">
+            <div class="left"><app-timeline/></div>
+            <div class="right"><app-event-container   [events]="events | isEventInCuurentDate : today: false" [day]="today" /></div>
+            
+            
+        </div>
+     
+    </div>
+</div>

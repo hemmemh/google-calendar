@@ -1,0 +1,18 @@
+<div class="main">
+    <div class="body">
+        <app-header/>
+        <app-side-bar-container class="side-bar-container">
+          <app-side-bar  [opened]="opened">
+             <app-left-bar/>
+          </app-side-bar>
+          <app-side-bar-content>
+            <router-outlet />
+          </app-side-bar-content>
+        </app-side-bar-container>
+
+          <button (click)="setOpened()" class="open" [ngClass]="{'active':opened}" mat-icon-button >
+            <mat-icon [ngClass]="{'opened':!opened}">keyboard_backspace</mat-icon>
+          </button>
+    </div>
+</div>
+

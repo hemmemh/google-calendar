@@ -1,0 +1,106 @@
+
+
+
+
+<div  *ngIf="view === 'days' "  class="month">
+    <div class="month-top">
+      <div (click)="changeView('years')" class="month-title month">
+        {{ months[month]}}  {{ year}}
+      </div>
+      <div class="actions">
+         <div (click)="toPrevMonth()" class="button">
+          <mat-icon>chevron_left</mat-icon>
+         </div>
+          <div (click)="toNextMonth()"  class="button">
+            <mat-icon>chevron_right</mat-icon>
+          </div>
+      </div>
+    </div>
+
+    <div class="weekDays month"  >
+      @for(dayOfWeek of daysOfWeek; track dayOfWeek){
+        <div class="weekDay">{{dayOfWeek}}</div>
+      }
+
+    </div>
+    <div class="monthDays month" >
+       @for(day of daysMonth; track $index){
+        @if(day !== ''){
+          <div 
+          (click)="onClick($event, day)" 
+          [ngClass]="ngClassSet(day)"
+          class="day"
+           >
+          <div class="num">{{day}}</div>
+         
+        </div>
+        } @else{
+          <div>
+            {{day}}
+          </div>
+        }
+    
+  
+       }
+
+    </div>
+ 
+</div>
+
+<div *ngIf="view === 'years' "   class="years">
+  <div class="month-top">
+    <div  (click)="changeView('days')" class="month-title month">
+      {{ year}}
+    </div>
+    <div class="actions">
+       <div (click)="toPrevYears()" class="button">
+        <mat-icon>chevron_left</mat-icon>
+       </div>
+        <div (click)="toNextYears()"  class="button">
+          <mat-icon>chevron_right</mat-icon>
+        </div>
+    </div>
+  </div>
+
+  <div class="years-array">
+    @for(year of years; track $index){
+      <div 
+      (click)=" onYearClick(year)" 
+      [ngClass]="{'active':today.year === year}"
+      class="year"
+       >
+       <div class="num">{{year}}</div>
+      </div>
+    }
+  </div>
+</div>
+
+
+<div *ngIf="view === 'months' "   class="months">
+  <div class="month-top">
+    <div (click)="changeView('days')" class="month-title month">
+      {{ chosenYear}}
+    </div>
+    <div class="actions">
+       <div (click)="toPrevChosenYear()" class="button">
+        <mat-icon>chevron_left</mat-icon>
+       </div>
+        <div (click)="toNextChosenYear()"  class="button">
+          <mat-icon>chevron_right</mat-icon>
+        </div>
+    </div>
+  </div>
+
+  <div class="months-array">
+    @for(month of  monthsShort; track $index){
+      <div 
+      (click)=" onMonthClick($index)" 
+
+      class="month-item"
+      [ngClass]="{'active':today.month === $index + 1 && today.year === chosenYear }"
+       >
+       <div class="num">{{month}}</div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.body{
+    padding: 20px;
+    min-width: 400px;
+    border-radius: 10px;
+    background:#cdd8f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}

@@ -1,0 +1,31 @@
+
+.contain{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input{
+    flex: 1 1 auto;
+}
+.month-picker{
+    z-index: 100;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    pointer-events: none;
+    transition:all 0.3s ease ;
+    opacity: 0;
+    &.visible{
+        transition:all 0.3s ease ;
+        pointer-events: inherit;
+    opacity: 1; 
+    }
+}

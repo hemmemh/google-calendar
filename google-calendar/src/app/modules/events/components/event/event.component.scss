@@ -1,0 +1,105 @@
+.event-wrapper {
+    cursor: pointer;
+    position: absolute;
+    padding: 1px;
+    z-index: 1000;
+    background: #529ba5;
+    border-radius: 4px ;
+ 
+}
+
+
+
+.event {
+    border-radius: 4px;
+    box-sizing: border-box;
+ 
+    border-color: rgb(3, 155, 229);
+     //padding: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: .1px;
+    line-height: 15px;
+    height: 100%;
+    overflow: hidden;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    //position: absolute;
+     
+}
+
+.active{
+    opacity: 0.5;
+ }
+
+.dragging {
+    pointer-events: none;
+    padding: 0 !important;
+    width: 100% !important;
+    left: 0% !important;
+    z-index: 1000;
+  overflow: visible;
+    position: relative;
+    box-shadow: 0px 6px 10px 0px rgba(0,0,0,.14) , 0px 1px 18px 0px rgba(0,0,0,.12) , 0px 3px 5px -1px rgba(0,0,0,.2) ;
+  
+}
+
+.resizable{
+    padding: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    //left: 0% !important;
+    z-index: 1000;
+    box-shadow: 0px 6px 10px 0px rgba(0,0,0,.14), 0px 1px 18px 0px rgba(0,0,0,.12), 0px 3px 5px -1px rgba(0,0,0,.2);
+}
+
+.text {
+    pointer-events: none;
+    word-wrap: break-word;
+    width: 100%;
+    padding: 4px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+}
+
+.new-event{
+    user-select: none;
+    z-index: 1000;
+    position: absolute;
+    border-radius: 4px;
+    background-color: rgb(3, 155, 229);
+    border-color: rgb(3, 155, 229);
+    padding: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: .1px;
+    line-height: 15px;
+    width: 100%;
+    min-height: 60px;
+    box-shadow: 
+      0px 6px 10px 0px rgba(0, 0, 0, .14), 
+      0px 1px 18px 0px rgba(0, 0, 0, .12), 
+      0px 3px 5px -1px rgba(0, 0, 0, .2);
+}
+
+.resize-anchor {
+    position: absolute;   
+    left: 0;
+    right: 0;
+    z-index: 101;
+    max-height: 8px;
+    height: 100%;
+}
+
+.resize-anchor:hover {
+    cursor: ns-resize;
+}

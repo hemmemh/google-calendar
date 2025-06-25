@@ -1,0 +1,17 @@
+
+.contain{
+    height: 60px;
+    position: relative;
+}
+
+.body{
+    border-right: 1px solid #d1d1d1;
+
+}
+.time{
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

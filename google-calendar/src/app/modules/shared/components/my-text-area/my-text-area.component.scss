@@ -1,0 +1,48 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$color: #979797;
+
+
+.area-contain{
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    transition:all 0.3s ease ;
+   
+}
+
+.area{
+    outline: none;
+    resize: vertical;
+    width: 100%;
+    background: none;
+    padding: 5px 5px 5px 5px;
+    border: none;
+    font-size: 14px;
+    border-bottom: 1px solid $color;
+    &:focus, &.active{
+        border-image: linear-gradient(to right, $primary,$secondary);
+        border-image-slice: 1;
+    }
+}
+
+.label{
+    line-height: 14px;
+    font-size: 14px;
+    pointer-events: none;
+    position: absolute;
+    color: $color;
+    top: 8px;
+    left: 5px;
+    transition:all 0.3s ease ;
+    &.active{
+        transition:all 0.3s ease ;
+        color: $primary;
+        font-size: 12px;
+        line-height: 12px;
+        top: -13px;
+    }
+}

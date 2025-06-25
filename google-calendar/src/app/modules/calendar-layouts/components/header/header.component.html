@@ -1,0 +1,22 @@
+<div class="body">
+    <nav class="navigation">
+        <button (click)="navigateByNavType('day')" mat-raised-button>День</button>
+        <button (click)="navigateByNavType('week')" mat-raised-button>Неделя</button>
+        <button mat-raised-button>Месяц</button>
+    </nav>
+    <app-change-date/>
+    <div class="changeActions">
+        <button (click)="undo()"  class="change" [ngClass]="{'changeActive':undoActive}" matTooltip="сохранить"   mat-icon-button color="black">
+          <mat-icon>undo</mat-icon>
+        </button> 
+        <button (click)="redo()" class="change"  [ngClass]="{'changeActive':redoActive}"  matTooltip="сохранить"   mat-icon-button color="black">
+          <mat-icon>redo</mat-icon>
+        </button> 
+      </div>
+    <div class="account">
+        <div class="account__name">{{user?.email}}</div>
+        <button (click)="logout()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </div>
+</div>

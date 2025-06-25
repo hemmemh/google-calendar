@@ -1,0 +1,27 @@
+<div  [style.height]="isOpen ?  this.maxHeight * 16 +'px' : 28 + 'px'"  class="body">
+   
+    <div (click)="setOpen()" [style.height]="isOpen ?  this.maxHeight * 16 +'px' : 28 + 'px'"  class="week">
+        <div class="week__title">{{today | getWeeksCount}}</div>
+        <mat-icon class="icon" [ngClass]="{'onHidden':!isOpen}" >expand_more</mat-icon>
+    </div>
+    <div class="day-containers">
+        <div appCreateFullDayEvent (mousedown)="isEventCrate = true" (mouseup)="isEventCrate = false"   class="full-day-events-container">
+
+            @for (group of groupEvents; track $index) {
+                @for (event of group; track event.uid; let i = $index) {
+                    <app-full-day-event 
+                      [event]="event" 
+                      [top]="i"  
+                      [firstDate]="days[0]" 
+                      [style]="{'pointerEvents':isEventCrate ? 'none' : 'auto'}" 
+                      [days]="days.length"/>
+                }
+            }
+         
+        </div>
+        @for (day of days; track $index){
+            <div  [attr.data-today]="day"  class="day-container"></div>
+        }
+     
+    </div>
+</div>

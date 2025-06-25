@@ -1,0 +1,48 @@
+<div 
+
+  appDraggable
+  (onDragEnd)="onEventDrop($event)"
+  appResizable
+  (onResizeMove)="onResizeMove($event)"
+  (onResizeEnd)="onResizeEnd($event)"
+  [secondPartHeight]="event.startDate| initSecondPartHeight : event.endDate"
+  [today]="day"
+  [attr.data-uid]="event.uid" 
+  #eventComponent
+  [event]="event"
+  [style.height]="(event | calculateEventHeight) + 'px'"
+  [style.width]="`${width}%`"
+  [style.left]="`${left}%`"
+  
+  [style.boxShadow]="
+  isDragging
+    ? '0px 6px 10px 0px rgba(0,0,0,.14), 0px 1px 18px 0px rgba(0,0,0,.12), 0px 3px 5px -1px rgba(0,0,0,.2)'
+    : ''
+"
+  [style.top]="event | calculateEventTop"
+
+  class="event-wrapper"
+>
+  <div appResizeHandler [today]="day" [type]="'top'" class="resize-anchor" style="top: 0;"></div>
+
+ 
+    <div class="event">
+      <div  class="text">
+        {{ event?.user?.email}}
+   
+      </div> 
+      <div class="text">
+        {{event.title.length !== 0 ? event.title : 'Нет названия'}}
+      </div>
+      <div  class="text time">
+   
+  {{reportTimes}}
+      </div>
+
+    
+
+  </div>
+
+     
+  <div appResizeHandler [today]="day"  [type]="'bottom'" class="resize-anchor" style="bottom: 0;"></div>
+</div>

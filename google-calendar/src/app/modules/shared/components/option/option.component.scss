@@ -1,0 +1,10 @@
+.body{
+    cursor: pointer;
+    background: #fff;
+    padding: 5px 10px;
+    @media (any-hover: hover) {
+        &:hover {
+          background: rgb(224, 224, 224);
+        }
+      }
+}

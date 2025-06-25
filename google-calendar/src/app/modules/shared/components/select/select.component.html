@@ -1,0 +1,6 @@
+<div class="select-contain" (click)="toggleDropdown()">
+    <app-my-input [(ngModel)]="inputValue"  [placeHolder]="placeHolder" [disabled]="true" />
+     <div class="options" (click)="$event.stopPropagation()" [ngClass]="{'active':open}" >
+        <ng-content></ng-content>
+     </div>
+</div>

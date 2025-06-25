@@ -1,0 +1,14 @@
+<div class="area-contain" >
+    <div class="label"  [ngClass]="{'active':focused || value !== ''}" >{{placeHolder}}</div>
+    <textarea
+    #textarea
+    (focus)="setFocused(true)"  
+    [(ngModel)]="value"
+    [ngClass]="{'active':focused || value !== ''}"
+    (input)="onInputChange($event)"
+    [disabled]="disabled"
+    (blur)="onBlur()"
+    class="area"
+     >
+    </textarea>
+   </div>

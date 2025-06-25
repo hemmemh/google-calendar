@@ -1,0 +1,43 @@
+
+.body{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+}
+
+.left{
+  width: 50px;
+}
+.right{
+  flex: 1 1 auto;
+}
+
+.header{
+  width: 100%;
+  padding-left: 49px;
+  border-bottom: 2px solid #d1d1d1;
+  display: grid;
+  :nth-child(n){
+      flex: 1 1 auto;
+  }
+  grid-template-columns: repeat(1, 1fr);
+  padding-right: 5px;
+}
+
+.contain{
+    overflow: auto;
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }

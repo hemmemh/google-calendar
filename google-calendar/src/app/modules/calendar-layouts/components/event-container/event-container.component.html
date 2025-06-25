@@ -1,0 +1,25 @@
+<div class="body">
+    <div appCreateEvent  [today]="day"  (mousedown)="isEventCrate = true" (mouseup)="isEventCrate = false"    [attr.data-today]="day"   class="events-container">
+        @for (group of groupEvents; track $index) {
+            @for(event of group; track event.uid; let c = $count; let i = $index){
+          
+                    <app-event 
+                    [style]="{'pointerEvents':isEventCrate ? 'none' : 'auto'}" 
+                    [event]="event"  
+                    [width]="100 / c"
+                    [left]="i * (100 / c)"
+                    [day]="day"/>
+                
+             
+            }
+        }
+      
+    </div>
+    <div class="hour-containers">
+        @for (hour of hours; track $index){
+            <div class="hour-container"></div>
+        }
+    </div>
+
+ 
+</div>

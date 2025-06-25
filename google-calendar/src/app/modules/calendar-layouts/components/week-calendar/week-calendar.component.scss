@@ -1,0 +1,105 @@
+:host{
+    background: var(--second-color);
+    position: relative;
+}
+.header{
+
+    width: 100%;
+    padding-left: 49px;
+    border-bottom: 2px solid #d1d1d1;
+    display: grid;
+    :nth-child(n){
+        flex: 1 1 auto;
+    }
+    grid-template-columns: repeat(7, 1fr);
+    padding-right: 5px;
+
+}
+
+
+
+.border{
+
+    width: 49px;
+    flex: 0  0 49px !important;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+}
+
+.left{
+  width: 50px;
+}
+.right{
+    display: flex;
+    :nth-child(n){
+        flex: 1 1 auto;
+    }
+  flex: 1 1 auto;
+}
+.contain{
+    overflow: auto;
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+
+
+  .clone{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200000;
+  
+  
+    
+}
+
+.active{
+
+    z-index: 3;
+    position: relative;
+    animation: active 0.2s cubic-bezier(0.4,0,0.2,1)  ;
+    @keyframes active {
+        from {
+          opacity: 0;
+          transform: translate(-56px,0);
+        }
+      
+        to {
+         opacity: 1;
+         transform: translate(0,0);
+        }
+      }
+}
+
+.active-before{
+    z-index: 3;
+    position: relative;
+    animation: active-before 0.2s cubic-bezier(0.4,0,0.2,1)  ;
+    @keyframes active-before {
+        from {
+          opacity: 0;
+          transform: translate(56px,0);
+        }
+      
+        to {
+         opacity: 1;
+         transform: translate(0,0);
+        }
+      }
+}

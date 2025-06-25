@@ -1,0 +1,86 @@
+<div class="body">
+    <div class="top">
+        <app-select [(ngModel)]="selectedType"  placeHolder="Выбрать">
+            @for (type of repeatTypes; track type) {
+               <app-option [value]="type"  [label]="repeatTypesEnum[type]">{{repeatTypesEnum[type]}}</app-option>
+            }
+        </app-select>
+    
+    </div>
+    <div class="contain">
+        <div class="contain__item">
+            <div class="contain__title">Повторять</div>
+            <ng-container *ngTemplateOutlet="selectedType === 'DAILY' ? days : weeks"></ng-container>
+        </div>
+        <div class="contain__item">
+            <div class="contain__title">Сколько повторять</div>
+            <div class="contain__options">
+                <mat-radio-group [(ngModel)]="untilType"  class="radio-group">
+                    <mat-radio-button  value="always">Всегда</mat-radio-button>
+                    <mat-radio-button  value="until">
+                    </mat-radio-button>
+                    <div class="until-class">
+                        <span>До</span>
+                         <app-date-picker  placeHolder="Выбрать дату" [(ngModel)]="until"/> 
+                    </div>
+                  </mat-radio-group>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <button (click)="close()" mat-button>отмена</button>
+        <button (click)="createRrule()" mat-button>Сохранить</button>
+    </div>
+</div>
+
+
+<ng-template #days>
+    <div class="contain__options">
+        <mat-radio-group [(ngModel)]="everyWorkDay" (change)="onEveryWorkDayChange($event)"   class="repeat">
+            <mat-radio-button  value="no">
+                <div class="row">
+                    <span>  каждый</span>
+                    <app-my-input   [min]="1" [max]="31" class="interval"  type="number" [(ngModel)]="interval"/>
+                    <span>день</span>
+                </div>
+              
+             </mat-radio-button>
+            <mat-radio-button  value="yes">Каждый рабочий день</mat-radio-button>
+          </mat-radio-group>
+    </div>
+</ng-template>
+
+
+<ng-template #weeks>
+    <div class="contain__options">
+       <div class="contain__option">
+        каждую
+        <mat-form-field>
+            <input type="number" matInput [(ngModel)]="interval" > 
+        </mat-form-field>
+        неделю
+       </div>
+       <div class="contain__option">
+          @for (day of  weekDays; track $index; let i = $index) {
+         
+                <label class="checkbox">
+                    <mat-checkbox
+                    [checked]="selectedWeekDays.includes(day)"
+                    (change)="updateSelectedWeekDays(day)"
+                  >
+               
+                  </mat-checkbox>
+                  <div class="checkbox__title">   {{weekDaysEnum[day]}}</div>
+                </label>
+
+             
+     
+          }
+       </div>
+              
+           
+
+          
+     
+    </div>
+</ng-template>

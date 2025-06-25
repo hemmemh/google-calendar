@@ -1,0 +1,46 @@
+<div class="body">
+    <div class="header">
+        <div class="title">Новое событие</div>
+         <div class="actions">
+            <button (click)="close()" mat-icon-button>
+                <mat-icon>close</mat-icon>
+              </button>
+         </div>
+    </div>
+    <div class="contain">
+        <div class="row">
+            <div class="row__title">Название</div>
+            <div class="row__contain">
+              <app-my-input clas=""  placeHolder="Название"  [(ngModel)]="title"/>
+              <app-my-text-area placeHolder="Описание" [(ngModel)]="description"  [minHeight]="30"  [maxHeight]="100"  [autoResize]="true"/>
+        
+              
+
+              
+            </div>
+        </div>
+        <div class="row">
+            <div class="row__title">Время и Дата</div>
+            <div class="row__contain">
+                <div class="row__date">
+                    <div class="row__dateItem">
+                      <app-date-picker  placeHolder="Выбрать дату"  [(ngModel)]="startDate"/>
+                      <app-time-picker [interval]="15"  placeHolder="Выбрать время"   [(ngModel)]="startTime" />
+                    </div>
+                    <div class="row__dateItem">
+                      <app-date-picker  placeHolder="Выбрать дату"  [(ngModel)]="endDate"/>
+                      <app-time-picker  [interval]="15"    placeHolder="Выбрать время"   [(ngModel)]="endTime" />
+                    </div>
+
+            </div>
+            <div class="options">
+              <mat-checkbox  [checked]="isRepeat" (change)="changeIsReapeat()"></mat-checkbox>
+              <div (click)="openRepeatModal($event)" class="repeat">Повторять</div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button (click)="saveEvent()" mat-stroked-button>{{data.event ? 'Сохранить' : 'Создать'}}</button>
+    </div>
+</div>
+

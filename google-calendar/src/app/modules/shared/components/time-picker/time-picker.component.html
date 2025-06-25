@@ -1,0 +1,18 @@
+<div  class="contain">
+    <app-my-input [placeHolder]="placeHolder"   class="input" [disabled]="true" [(ngModel)]="inputValue" />
+    <button #icon class="icon" (click)="setTimesVisible(!timesVisible)" mat-icon-button >
+        <mat-icon>av_timer</mat-icon>
+      </button>
+      <div class="times" [ngClass]="{'visible':timesVisible}" >
+        @for (time of  times; track $index) {
+            <div  (click)="onTimeClick(time)" class="time">
+                <div class="title">{{time.toFormat('HH:mm')}}</div>
+                @if (inputValue === time.toFormat('HH:mm')) {
+                    <mat-icon>check</mat-icon>
+                }
+             
+            </div>
+        }
+    
+      </div>
+</div>

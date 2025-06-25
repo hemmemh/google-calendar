@@ -1,0 +1,37 @@
+.body{
+    padding: 15px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contain{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item{
+    display: flex;
+    gap: 20px;
+    &__left{
+        flex: 0 0 100px;
+    }
+    &__right{
+        flex: 1 1 auto;
+    }
+}
+
+.bottom{
+    display: flex;
+    justify-content: flex-end;
+}

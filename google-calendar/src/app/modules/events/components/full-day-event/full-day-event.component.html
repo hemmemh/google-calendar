@@ -1,0 +1,23 @@
+<div 
+appDraggableFullDay
+appResizableFullDay
+(onDragEnd)="onEventDrop($event)"
+(onResizeEnd)="onResizeEnd($event)"
+[style.width]="event | calculateFullDayEventWidth : days "
+[style.left]="event | calculateFullDayEventLeft : firstDate :days "
+[style.top]="16 * top + 'px'"
+[startDate]="event.startDate | fromMillisToDate"
+[endDate]="event.endDate | fromMillisToDate"
+[event]="event"
+[days]="days"
+
+  class="event-wrapper"
+>
+  <div appResizableHandlerFullDay  type="left" class="resize-anchor" style="left: 0;"></div>
+    <div class="event">
+      <div class="title">
+        {{event.title.length !== 0 ? event.title : 'Нет названия'}}
+      </div>
+    </div>
+  <div appResizableHandlerFullDay  type="right" class="resize-anchor" style="right: 0;"></div>
+</div>

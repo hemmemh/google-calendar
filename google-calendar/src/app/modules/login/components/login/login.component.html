@@ -1,0 +1,17 @@
+<div class="body">
+    <div class="title">Авторизация</div>
+    <form class="form" [formGroup]="loginForm">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Пароль</mat-label>
+            <input type="password" matInput formControlName="password">
+        </mat-form-field>
+    </form>
+    <div class="buttons">
+        <button (click)="login()" mat-flat-button>Войти</button>
+        <button  (click)="registration()" mat-flat-button>Регистрация</button>
+    </div>
+</div>

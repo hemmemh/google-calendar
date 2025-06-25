@@ -1,0 +1,26 @@
+.select-contain{
+    position: relative;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    @media (any-hover: hover) {
+        &:hover {
+            transition: all ease 0.3s;
+          background: rgb(224, 224, 224);
+        }
+      }
+}
+
+.options{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease 0.3s;
+    &.active{
+        opacity: 1;
+        transition: all ease 0.3s;
+        pointer-events: inherit;
+    }
+}

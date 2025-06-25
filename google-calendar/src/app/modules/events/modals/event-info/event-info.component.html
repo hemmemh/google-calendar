@@ -1,0 +1,37 @@
+<div class="body">
+    <div class="header">
+        <div class="title">{{event.title.length !== 0 ? event.title : 'Нет значения'}}</div>
+        <div class="actions">
+            <button (click)="close()" mat-icon-button >
+                <mat-icon>close</mat-icon>
+              </button>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="item">
+            <div class="item__left">Время и дата</div>
+            <div class="item__right">{{event | getEventInfoDate}}</div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="actions">
+            <button  [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (click)="onEditClick()" mat-icon-button >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button [matMenuTriggerFor]="menu2" #menuTrigger2="matMenuTrigger"   (click)="onDeleteClick()" mat-icon-button >
+                <mat-icon>delete</mat-icon>
+              </button>
+        </div>
+    </div>
+</div>
+
+<mat-menu #menu="matMenu">
+    <button (click)="openCreateEvent(false)" mat-menu-item>Только это</button>
+    <button (click)="openCreateEvent(true)"  mat-menu-item>Все</button>
+  </mat-menu>
+
+
+  <mat-menu #menu2="matMenu">
+    <button (click)="delete(false)" mat-menu-item>Только это</button>
+    <button (click)="delete(true)"  mat-menu-item>Все</button>
+  </mat-menu>

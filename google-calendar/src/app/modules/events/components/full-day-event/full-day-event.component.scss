@@ -1,0 +1,50 @@
+.event-wrapper {
+    cursor: pointer;
+    position: absolute;
+    padding: 1px;
+    z-index: 1000;
+    background: #529ba5;
+    border-radius: 4px ;
+ 
+}
+
+.active{
+    opacity: 0.5 !important;
+ }
+
+.event {
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 13px;
+    border-color: rgb(3, 155, 229);
+     //padding: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: .1px;
+    line-height: 15px;
+    overflow: hidden;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    //position: absolute;
+     
+}
+
+.title{
+    padding: 0 2px;
+}
+
+.resize-anchor {
+    position: absolute;   
+    z-index: 101;
+    width: 8px;
+    top: 0;
+    height: 100%;
+}
+
+.resize-anchor:hover {
+    cursor: ns-resize;
+}

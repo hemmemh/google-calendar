@@ -1,0 +1,28 @@
+.main{
+
+    background: var(--main-color);
+    position: relative;
+}
+
+.side-bar{
+   
+    width: 280px;
+}
+
+.side-bar  {
+    border-radius: 0;
+}
+.opened{
+    transform: rotate(180deg);
+}
+.open{
+    background: #fff;
+    z-index: 100;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    transition: 0.3s ease;
+    &.active{
+        left: 255px;
+    }
+}

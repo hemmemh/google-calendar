@@ -1,0 +1,15 @@
+:host {
+    //width: 0;
+    flex: 0 0 250px;
+    overflow: hidden;
+    transition: all ease 0.3s;
+margin-left: -250px;
+    &.openedContent{
+        transition: all ease 0.3s;
+        margin-left: 0px;
+        transform: translate(0, 0);
+       //width: 250px;
+     
+    }
+  }
+  

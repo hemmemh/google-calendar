@@ -1,0 +1,39 @@
+.contain{
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.times{
+    background: #fff;
+    z-index: 100;
+    width: 100%;
+    overflow: auto;
+    height: 200px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    pointer-events: none;
+    transition:all 0.3s ease ;
+    opacity: 0;
+    &.visible{
+        transition:all 0.3s ease ;
+        pointer-events: inherit;
+    opacity: 1; 
+    }
+}
+
+.time{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    @media (any-hover: hover) {
+        &:hover {
+          background: #d3d3d3;
+        }
+      }
+}

@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="body">
+        <div class="header">
+            @for(day of days; track $index){
+                <app-event-container-header [day]="day"/>
+            }
+         
+        </div>
+        <div class="full-day">
+           <app-full-day-event-container [today]="today" [days]="days"  [events]="events | getFullDayEvents" />
+        </div>
+        <div class="contain">
+            <div class="left"><app-timeline/></div>
+            <div class="right">
+                @for(day of days; track $index){
+                    <app-event-container  [events]="events | isEventInCuurentDate : day : false" [day]="day"/>
+                }
+ 
+            </div>
+            
+            
+        </div>
+     
+    </div>
+</div>

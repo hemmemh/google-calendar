@@ -1,0 +1,15 @@
+<div class="input-contain" >
+ <div class="label"  [ngClass]="{'active':focused || value !== ''}" >{{placeHolder}}</div>
+ <input 
+    (focus)="setFocused(true)"  
+    [(ngModel)]="value"
+    [type]="type"
+    [min]="min"
+    [max]="max"
+    [ngClass]="{'active':focused || value !== ''}"
+    (input)="onInputChange($event)"
+     [ngStyle]="{'pointerEvents': disabled ? 'none': 'inherit'}"
+    (blur)="onBlur()"
+     type="text" 
+     class="input">
+</div>

@@ -1,0 +1,59 @@
+.body{
+
+}
+
+.top{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.contain{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    &__option{
+        display: flex;
+        align-items: center;
+    }
+    gap: 20px;
+    &__title{
+        color: #999999;
+    }
+}
+.row{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.interval{
+    flex: 0 0 100px;
+}
+
+.radio-group{
+    display: flex;
+}
+
+.repeat{
+    display: flex;
+    flex-direction: column;
+}
+
+.until-class{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
