@@ -72,7 +72,7 @@ export class CreateEventComponent implements OnInit {
       this.isRepeat = this.rrule !== null
     }
     console.log('NN', this.data.startDate);
-    
+  
     this.startDate = this.data.startDate
     this.startTime = this.data.startDate
     this.endDate = this.data.endDate
@@ -97,8 +97,9 @@ export class CreateEventComponent implements OnInit {
 
 
   async saveEvent() {
-  
+     console.log('end', this.startDate, this.endDate);
     if(!this.user) return
+   
     
     let newStartDate = this.startDate
     const newStartTime = this.startTime

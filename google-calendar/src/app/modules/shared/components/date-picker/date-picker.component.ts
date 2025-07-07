@@ -77,8 +77,8 @@ export class DatePickerComponent implements ControlValueAccessor {
  
     if(!target.classList.contains('month-picker') && !target.closest('.month-picker')    &&  !icon.contains(target)){
         this.calendarVisible = false
-        this.today = DateTime.now()
-        this.onChange( this.today);
+        // this.today = DateTime.now()
+        // this.onChange( this.today);
     }   
   }
 

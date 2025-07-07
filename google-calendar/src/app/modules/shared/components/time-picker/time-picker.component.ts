@@ -30,6 +30,7 @@ export class TimePickerComponent implements OnChanges, OnInit,  ControlValueAcce
   writeValue(date:DateTime): void {
    if(date){
     this.value = date
+    this.setTimes()
     this.onChange(this.value);
     this.inputValue = this.value.toFormat('HH:mm')
    }
@@ -81,6 +82,8 @@ export class TimePickerComponent implements OnChanges, OnInit,  ControlValueAcce
   @Output() onChangeDate = new EventEmitter<DateTime>()
 
   onTimeClick(time:DateTime){
+    console.log('time', time);
+    
        this.onChangeDate.emit(time)
        this.value = time
        this.inputValue = this.value.toFormat('HH:mm')
@@ -95,7 +98,7 @@ export class TimePickerComponent implements OnChanges, OnInit,  ControlValueAcce
 
   setTimes(){
 
-    let start = DateTime.now().startOf('day')
+    let start = this.value.startOf('day')
     this.times = [start]
     const end = start.plus({day:1})
   while (start.toMillis() < end.toMillis()) {
