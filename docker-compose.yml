@@ -10,7 +10,7 @@ services:
        POSTGRES_PASSWORD: google_calendar
        POSTGRES_DB: google_calendar
      ports:
-       - 5632:5432
+       - 5633:5432
      restart: unless-stopped
  
    back:
@@ -19,18 +19,18 @@ services:
        - ENV
      command: npm run start:${ENV:-prod}
      ports:
-       - 5100:5100
+       - 5500:5500
      depends_on:
        - postgres
-  #  front:
-  #    build: 
-  #      context: google-calendar/.
-  #    labels:
-  #      SERVICE_CHECK_INTERVAL: 10s
-  #    ports:
-  #      - 3030:3030
-  #    depends_on:
-  #      - back
+   front:
+     build: 
+       context: google-calendar/.
+     labels:
+       SERVICE_CHECK_INTERVAL: 10s
+     ports:
+       - 3040:80
+     depends_on:
+       - back
 
  
 volumes:
